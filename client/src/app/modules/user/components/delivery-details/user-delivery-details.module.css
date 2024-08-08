@@ -1,0 +1,133 @@
+.delivery-details-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.delivery-details-container {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  grid-template-areas:
+    "image"
+    "description"
+    "totalPrice"
+    "actionButtons";
+
+  padding: 1.5rem 1rem;
+  overflow: hidden;
+  border: 1px solid #c6c6c6;
+  border-radius: 4px;
+}
+
+.image {
+  width: 53px;
+  height: 53px;
+  border: 1px solid #aeaeae;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 0px;
+}
+
+.description {
+  grid-area: description;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.title {
+  color: var(--primary-fg-color);
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.message {
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: #585858;
+  text-align: center;
+}
+
+.total-price {
+  grid-area: totalPrice;
+  display: flex;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #585858;
+  gap: 5px;
+}
+
+.action {
+  grid-area: actionButtons;
+  display: flex;
+  gap: 1rem;
+}
+
+.free-gift {
+  position: absolute;
+  background-color: #ffb8ef;
+  border: 1px solid #e7aada;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #773e75;
+  padding: 0.2rem 1rem;
+  bottom: 0;
+  transform: rotate(356deg) translateY(65%);
+}
+
+@media only screen and (min-width: 500px) {
+  .delivery-details-wrapper {
+    max-width: 750px;
+  }
+
+  .delivery-details-container {
+    justify-items: unset;
+    padding: 0 1rem 0 0;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 0.2fr;
+    grid-template-areas:
+      "image image . . ."
+      "image image . . ."
+      "image image description description ."
+      "image image description description ."
+      "image image totalPrice . ."
+      "image image . . ."
+      "image image . . ."
+      "image image actionButtons actionButtons actionButtons"
+      "image image . . .";
+  }
+
+  .image {
+    grid-area: image;
+    width: 100%;
+    height: 100%;
+    position: unset;
+    transform: unset;
+    border-radius: unset;
+    border: none;
+  }
+
+  .free-gift {
+    top: 0;
+    bottom: unset;
+    right: 0;
+    transform: rotate(9deg) translate(8%, -40%);
+  }
+
+  .message {
+    text-align: unset;
+  }
+
+  .description {
+    align-items: flex-start;
+  }
+
+  .action-button {
+    width: 50%;
+  }
+}

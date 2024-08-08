@@ -1,0 +1,34 @@
+:root {
+  /* colors */
+  --primary-fg-color: #0d8112;
+  --primary-bg-color: #ffffff;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+* {
+  padding: 0px;
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+/* reset progress style */
+progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  background: none;
+  width: 1em;
+  height: 1em;
+  border: 0;
+}
+progress::-moz-progress-bar {
+  background: none;
+}
+progress::-webkit-progress-bar {
+  display: none;
+}
+progress::-ms-fill {
+  animation-name: none;
+}
